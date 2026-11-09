@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "提示词工程",
+  "version": "1.0.0",
+  "description": "AI 提示词生成器 - 侧边栏聊天助手",
+  "permissions": [
+    "sidePanel",
+    "storage",
+    "contextMenus",
+    "activeTab"
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+G"
+      },
+      "description": "Open Gestalt sidebar"
+    },
+    "generate-prompt": {
+      "suggested_key": {
+        "default": "Alt+Shift+G"
+      },
+      "description": "Quick generate prompt"
+    }
+  },
+  "background": {
+    "service_worker": "src/background.ts"
+  },
+  "side_panel": {
+    "default_path": "index.html"
+  },
+  "action": {
+    "default_title": "Open Gestalt"
+  },
+  "icons": {
+    "16": "icon/16.png",
+    "48": "icon/48.png",
+    "128": "icon/128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
